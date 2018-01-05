@@ -24,7 +24,7 @@ post '/fulfilled' do
 	prng = Random.new
 	nickname = nicknames[prng.rand(nicknames.length) - 1]
 
-	session = GoogleDrive::Session.from_service_account_key("AutoMatty-fe567505bfbf.json")
+	session = GoogleDrive::Session.from_service_account_key(ENV['DRIVE'])
 	sheet = session.spreadsheet_by_key("1I-jychFZpkSVI8oZoMv_aBepDc-ZOXEovtinFeAa0Dg").worksheets[0]
 
 	line_items = data['line_items']
