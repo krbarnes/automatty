@@ -1,0 +1,13 @@
+.DS_STORE
+*.swp
+*.rbc
+*.sass-cache
+/pkg
+/doc/api
+/Gemfile.lock
+/coverage
+.yardoc
+doc/
+.bundle
+
+AutoMatty-fe567505bfbf.json
