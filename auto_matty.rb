@@ -17,6 +17,13 @@ post '/fulfilled' do
 	last_name = data['customer']['last_name']
 	email = data['customer']['email']
 
+	file = open("nicknames.txt")
+	nicknames = file.read.split(/\n/)
+	file.close
+
+	prng = Random.new
+	nickname = nicknames[prng.rand(nicknames.length) - 1]
+
 	session = GoogleDrive::Session.from_service_account_key("AutoMatty-fe567505bfbf.json")
 	sheet = session.spreadsheet_by_key("1I-jychFZpkSVI8oZoMv_aBepDc-ZOXEovtinFeAa0Dg").worksheets[0]
 
@@ -25,7 +32,7 @@ post '/fulfilled' do
 		row = sheet.num_rows + 1
 		sheet[row, 1] = item["title"]
 		sheet[row, 2] = total_price
-		sheet[row, 3] = "#{first_name} #{last_name}"
+		sheet[row, 3] = "#{first_name} \"#{nickname}\" #{last_name}"
 		sheet[row, 4] = email
 		sheet[row, 5] = date.strftime("%b %e, %l:%M %p")
 	end
