@@ -1,3 +1,3 @@
-require 'auto_matty'
+require './auto_matty'
 
 run Sinatra::Application
