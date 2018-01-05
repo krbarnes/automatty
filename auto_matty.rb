@@ -26,7 +26,7 @@ post '/fulfilled' do
 
 	envConfig = ENV['DRIVE']
 
-	io = envConfig = nil ? StringIO.new(envConfig) : "AutoMatty-fe567505bfbf.json"
+	io = envConfig != nil ? StringIO.new(envConfig) : "AutoMatty-fe567505bfbf.json"
 
 	session = GoogleDrive::Session.from_service_account_key(io)
 
