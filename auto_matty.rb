@@ -34,7 +34,7 @@ post '/fulfilled' do
 
 	line_items = data['line_items']
 	line_items.each do |item|
-		row = 2
+		row = sheet.num_rows + 1
 		sheet.insert_rows(row, 1)
 		sheet[row, 1] = item["title"]
 		sheet[row, 2] = total_price
