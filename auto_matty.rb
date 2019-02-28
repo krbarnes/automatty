@@ -19,12 +19,16 @@ post '/fulfilled' do
 
 
 	Thread.new {
+
 		file = open("nicknames.txt")
 		nicknames = file.read.split(/\n/)
 		file.close
 
 		prng = Random.new
 		nickname = nicknames[prng.rand(nicknames.length) - 1]
+
+		nickname = "Oh Baby" if last_name.upcase == "ORMSBY"
+		nickname = "Coach" if last_name.upcase == "BASTIN-MILLAR"
 
 		envConfig = ENV['DRIVE']
 
