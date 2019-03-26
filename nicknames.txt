@@ -972,7 +972,6 @@ The Captain
 Ice Berg
 Zata
 Hank
-Z
 Archie
 Zibby
 ZBad
@@ -987,7 +986,6 @@ The Hobbit
 Frodo
 #greighty8
 The Human Emoji
-Bangbus
 Matty Hustle
 Wild Bill
 The Moist
