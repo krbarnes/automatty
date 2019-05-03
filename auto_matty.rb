@@ -27,7 +27,9 @@ post '/fulfilled' do
 		prng = Random.new
 		nickname = nicknames[prng.rand(nicknames.length) - 1]
 
-		nickname = "Oh Baby" if last_name.upcase == "ORMSBY"
+		nickname = "I PROmise to PaSS" if last_name.upcase == "ORMSBY"
+		nickname = "Evan Nicks" if last_name.upcase == "EVANS"
+		nickname = "🌭" if last_name.upcase == "BILLARD"
 
 		envConfig = ENV['DRIVE']
 
